@@ -1,5 +1,7 @@
 <?php
 
+// Этот код нужно добавить в cron выполняться каждый день
+
 require_once 'config.php';
 require_once 'api.php';
 spl_autoload_register(function ($class_name) {
