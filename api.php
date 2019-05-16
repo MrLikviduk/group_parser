@@ -44,6 +44,11 @@ function api_method($method, array $params)
     return json_decode(file_get_contents('https://api.vk.com/method/' . $method . '?' . $get_params));
 }
 
+function user_api_method($method, array $params) {
+    $params['access_token'] = USER_ACCESS_TOKEN;
+    return api_method($method, $params);
+}
+
 function attachment_is_used($attachment) {
     $type = $attachment->type;
     $id = $attachment->$type->id;
